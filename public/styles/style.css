@@ -5,56 +5,88 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-html{
-    background-color: rgb(221, 216, 216);
+html, body{
+    background-color: white;
+
 }
 
-h2{
-    color: white;
+body{
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+header h1 {
+   
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+h1{
     text-align: center;
 }
 
+h2{
+    color: black;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 #error{
-    color: #f80828;
+    color: #e6203b;
     margin-bottom: 5px;
 }
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 100px;
-    max-width: 170vw;
-    height: 140vh;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: 40px;
+    max-width: 90vw;
+    height: 90vh;
     align-items: center;
     justify-content: center;
-    margin: 0 80px;
+    margin: 0 40px;
 }
 
-.content-tec{
-    background-color:#ce13be ;
-    padding: 60px 0;
-    border-radius: 7px 23px 23px  23px;
+.img-tech {
+    width: 510px;
+}
+
+.content-tech{
+    background-color:#eaecf3 ;
+    padding: 36px 0;
+    border-radius: 5px 18px 18px  18px;
 }
 
 #task-content{
-    padding: 90px;
+    padding: 120px;
 }
 
 .one-section{
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: space-between;
 }
 
 
 input{
    
-    border: 3px solid #ce13be;
-    padding: 30px;
-    font-size: .4rem;
+    border: 1.5px solid #b6b2b8;
+    padding: 17px;
+    font-size: .9rem;
     margin: 15px 0;
-    border-radius: 12px;
+    border-radius: 8px;
 } 
 
 input:focus{
@@ -73,8 +105,8 @@ li{
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 17px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     margin: 15px 0;
     list-style: none;
     box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4)
@@ -87,11 +119,12 @@ li:hover{
 
 
 button{
+   
     cursor: pointer;
     font-weight: bold;
-    padding: 25px;
+    padding: 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 9px;
     box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3)
        
 }
@@ -111,26 +144,26 @@ span:hover{
 .btn{
     display: flex;
     justify-content: space-evenly;
-    margin: 2.3em 3.7em 0 3.7em;
+    margin: 2em 3em 0 3em;
 }
 
 #img{
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
 }
 
 #primary-color{
-    background-color: #ce13be;
+    background-color: #cf71c4;
     color: white;
 }
 
 #green{
-    background-color:#07fa50;
+    background-color:#1bdd55;
     color: white;
 }
 
 #red{
-    background-color:#f50626;
+    background-color:#db152f;
     color: white;
 }
 
@@ -147,13 +180,21 @@ span:hover{
 
     section{
         margin-bottom: 30px;
-        width: 80vw;
+        width: 85vw;
     }
 
     .btn button{
-        margin: 0 8px;
+        margin: 0 7px;
     }
 
    
 }
 
+@media only screen and (max-width: 748px) {
+    .content {
+     flex-direction: column;
+     height: 100vh;
+    }
+ }
+
+ 
