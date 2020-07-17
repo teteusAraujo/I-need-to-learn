@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html{
+    background-color: rgb(221, 216, 216);
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
+
+#error{
+    color: #f80828;
+    margin-bottom: 5px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 100px;
+    max-width: 170vw;
+    height: 140vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0 80px;
+}
+
+.content-tec{
+    background-color:#ce13be ;
+    padding: 60px 0;
+    border-radius: 7px 23px 23px  23px;
+}
+
+#task-content{
+    padding: 90px;
+}
+
+.one-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+input{
+   
+    border: 3px solid #ce13be;
+    padding: 30px;
+    font-size: .4rem;
+    margin: 15px 0;
+    border-radius: 12px;
+} 
+
+input:focus{
+    border-color: purple; 
+    outline: none;
+
+}
+
+.detail{
+    background-color: rgba(71, 5, 71, 0.5);
+    width: 7px;
+    height: 32px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 17px;
+    border-radius: 10px;
+    margin: 15px 0;
+    list-style: none;
+    box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4)
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+
+
+button{
+    cursor: pointer;
+    font-weight: bold;
+    padding: 25px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3)
+       
+}
+
+button:hover{
+    opacity: 0.4;
+}
+
+button:focus{
+    outline: none;  
+}
+
+span:hover{
+    cursor: pointer;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2.3em 3.7em 0 3.7em;
+}
+
+#img{
+    width: 50px;
+    height: 50px;
+}
+
+#primary-color{
+    background-color: #ce13be;
+    color: white;
+}
+
+#green{
+    background-color:#07fa50;
+    color: white;
+}
+
+#red{
+    background-color:#f50626;
+    color: white;
+}
+
+.check {
+    text-decoration: line-through;
+    color: #00A8B5;
+}
+
+@media(max-width:768px){
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    section{
+        margin-bottom: 30px;
+        width: 80vw;
+    }
+
+    .btn button{
+        margin: 0 8px;
+    }
+
+   
+}
+
