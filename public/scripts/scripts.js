@@ -10,7 +10,7 @@ buttonAdd.addEventListener('click', function(){
          
         if (input.value != "") { 
             lista.innerHTML += `<li id="card" class="cards" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" ondragend="onDragEnd(event)" onclick="checkItem(this)"> <p>${input.value}</p>
-              <span id="delete-item" onclick="removeItem(this)"> <img id="img" src="../assets/remove.svg" alt="deletar um item"></span>
+              <span id="delete-item" onclick="removeItem(this)"> <img id="img" src="../../public/assets/remove.svg" alt="deletar um item"></span>
               </li>  `
 
             input.value = "" 

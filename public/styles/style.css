@@ -21,7 +21,6 @@ body{
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 50px;
 }
@@ -31,16 +30,19 @@ header h1 {
     font-weight: bold;
     display: flex;
     align-items: center;
+   
 }
 
 h1{
     text-align: center;
+    color: #502153;
 }
 
 h2{
     color: black;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
+    color: #502153;
 }
 
 #error{
@@ -82,7 +84,7 @@ h2{
 
 input{
    
-    border: 1.5px solid #b6b2b8;
+    border: 1.5px solid #efedf0;
     padding: 17px;
     font-size: .9rem;
     margin: 15px 0;
