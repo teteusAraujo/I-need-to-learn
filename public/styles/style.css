@@ -5,14 +5,9 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-html, body{
-    background-color: white;
-
-}
-
 body{
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -22,7 +17,18 @@ body{
 header {
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 40px; 
+}
+
+h1{
+    text-align: center;
+    color: #502153;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: #502153;
 }
 
 header h1 {
@@ -33,17 +39,6 @@ header h1 {
    
 }
 
-h1{
-    text-align: center;
-    color: #502153;
-}
-
-h2{
-    color: black;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #502153;
-}
 
 #error{
     color: #e6203b;
@@ -52,17 +47,18 @@ h2{
 
 .content {
     display: grid;
-    grid-template-columns: 0.9fr 1.4fr;
-    gap: 40px;
-    max-width: 90vw;
-    height: 90vh;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 45px;
+    max-width: 95vw;
+    height: 95vh;
     align-items: center;
     justify-content: center;
-    margin: 0 40px;
+    margin: 0 45px;
 }
 
 .img-tech {
-    width: 510px;
+    margin-top: 0;
+    width: 450px;
 }
 
 .content-tech{
