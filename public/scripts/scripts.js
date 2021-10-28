@@ -1,93 +1,109 @@
-const input = document.querySelector('.input-tec')
-const buttonAdd = document.querySelector('.add')
-const lista = document.getElementById('task-content')
+// ======= Variables/ DOM =======
+
 const error = document.getElementById('error')
-const all = document.querySelector('.content-tec')
+const input = document.querySelector('.input-tec')
+const lista = document.getElementById('list')
+const techs = []
+//const all = document.querySelector('.content-tech')
 
 
+// ======= Functions =======
 
-buttonAdd.addEventListener('click', function(){
-         
-        if (input.value != "") { 
-            lista.innerHTML += `<li id="card" class="cards" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" ondragend="onDragEnd(event)" onclick="checkItem(this)"> <p>${input.value}</p>
-              <span id="delete-item" onclick="removeItem(this)"> <img id="img" src="../../public/assets/remove.svg" alt="deletar um item"></span>
-              </li>  `
+// Button new tech
+function newTech() {    
+    if (input.value != '' && notInTechs()) { 
+        lista.innerHTML += `<li class="card"
+                                draggable="true" 
+                                ondragstart="onDragStart(event)" 
+                                ondrag="onDrag(event)" 
+                                ondragend="onDragEnd(event)" 
+                                onclick="checkItem(this)"
+                            >
+                                <p id="delete-item">${input.value}</p>
+                                <span onclick="removeItem(input.value)">
+                                    <img id="img"
+                                         src="../../public/assets/remove.svg" 
+                                         alt="deletar um item"
+                                    >
+                                </span>
+                            </li>`
+        techs.push(input.value.toLowerCase());
+        input.value = ""
+        input.focus() 
+        error.innerHTML = ""
+        //all.add()
+    } else {
+        error.innerHTML = "Por favor, digite uma nova tecnologia."  
+    } 
+}
 
-            input.value = "" 
-            error.innerHTML =""
-            all.add()
+// Input verify
+function notInTechs() {
+    if (techs.indexOf(input.value.toLowerCase()) == -1) {
+        return true
+    } else {
+        return false
+    }
+}
 
-        } else {
-            error.innerHTML = "Por favor, digite uma nova tecnologia ."
-            
-        }
-        
-})
-
-
-
+// Check items
 function checkItem(item) {
     item.classList.toggle('check')
 }
 
+// Remove items
+function removeItem(inp) {
+    let del = document.getElementById('delete-item')
+    let idx = techs.indexOf(inp.toLowerCase())
+    if (idx != -1) {
+        techs.splice(idx, 1)
+    }
+    del.parentNode.remove()
+}    
 
-function removeItem(item) {
-    item.parentNode.remove()
-}
-
-
-
+// Button check all
 function checkAll(){
     lista.classList.toggle('check')
 }
 
-
+// Button remove all
 function removeAll(){
-    lista.remove()
+    lista.innerHTML = ''
 }
 
 
-function onDragStart(e){
-  
-    e.dataTransfer.setData("Text",e.target.id);
-    
-    event.target.style.background = "rgba(128, 0, 128, 0.5)";
-    
-        
-}
-function onDrag(e){
-    console.log('card movendo')
-    event.target.style.cursor="move"
+// ======= Drag Events =======
+
+// .card 
+function onDragStart(e) {
+    e.dataTransfer.setData("Text", e.target.id)
+    e.target.style.background = "rgba(128, 0, 128, 0.5)"  
 }
 
-function onDragEnter(e){
-    
-    
-}
-
-function onDragOver(e){
-  
-    e.preventDefault();
-        
-}
-
-function onDragLeave(e){
-  
-}
-
-function onDrop(e){
-
-    var data = e.dataTransfer.getData("Text");
-    
-    document.getElementById('task-content').appendChild(document.getElementById(data));
-   
-    
-    e.preventDefault(); 
+function onDrag(e) {
+    e.target.style.cursor="move"
 }
 
 function onDragEnd(e){
-    
-    event.target.style.background = "";
-    
+    e.target.style.background = ""
+}
+
+// #task-content
+function onDragEnter(e) {
     
 }
+
+function onDrop(e){
+    var data = e.dataTransfer.getData("Text")
+    document.getElementById('task-content').appendChild(document.getElementById(data))
+    e.preventDefault(); 
+}
+
+function onDragOver(e) {
+    e.preventDefault();    
+}
+
+function onDragLeave(e){
+
+}
+

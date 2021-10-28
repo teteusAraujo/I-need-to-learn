@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
 
-body{
+body {
     width: 90%;
     max-width: 1200px;
     height: 100%;
@@ -20,29 +20,10 @@ header {
     margin-top: 40px; 
 }
 
-h1{
-    text-align: center;
-    color: #502153;
-}
-
-h2{
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #502153;
-}
-
-header h1 {
-   
+h1 {
     font-weight: bold;
-    display: flex;
-    align-items: center;
-   
-}
-
-
-#error{
-    color: #e6203b;
-    margin-bottom: 5px;
+    text-align: center;
+    color: #502153;
 }
 
 .content {
@@ -56,30 +37,23 @@ header h1 {
     margin: 0 45px;
 }
 
-.img-tech {
-    margin-top: 0;
-    width: 450px;
-}
-
-.content-tech{
-    background-color:#eaecf3 ;
-    padding: 36px 0;
-    border-radius: 5px 18px 18px  18px;
-}
-
-#task-content{
-    padding: 120px;
-}
-
-.one-section{
+.one-section {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
+.img-tech {
+    margin-top: 0;
+    width: 450px;
+}
 
-input{
-   
+#error {
+    color: #e6203b;
+    margin-bottom: 5px;
+}
+
+input {
     border: 1.5px solid #efedf0;
     padding: 17px;
     font-size: .9rem;
@@ -87,19 +61,37 @@ input{
     border-radius: 8px;
 } 
 
-input:focus{
-    border-color: purple; 
-    outline: none;
-
+button {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 16px;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3)
 }
 
-.detail{
-    background-color: rgba(71, 5, 71, 0.5);
-    width: 7px;
-    height: 32px;
+#primary-color {
+    background-color: #cf71c4;
+    color: white;
 }
 
-li{
+.content-tech {
+    background-color:#eaecf3 ;
+    padding: 36px 0;
+    border-radius: 5px 18px 18px  18px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: #502153;
+}
+
+#task-content {
+    padding: 120px;
+}
+
+li {
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -110,58 +102,19 @@ li{
     box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4)
 }
 
-li:hover{
-    cursor: pointer;
+#img {
+    width: 20px;
+    height: 20px;
 }
 
-
-
-button{
-   
-    cursor: pointer;
-    font-weight: bold;
-    padding: 16px;
-    border: none;
-    border-radius: 9px;
-    box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3)
-       
-}
-
-button:hover{
-    opacity: 0.4;
-}
-
-button:focus{
-    outline: none;  
-}
-
-span:hover{
-    cursor: pointer;
-}
-
-.btn{
+.btn {
     display: flex;
     justify-content: space-evenly;
     margin: 2em 3em 0 3em;
 }
 
-#img{
-    width: 20px;
-    height: 20px;
-}
-
-#primary-color{
-    background-color: #cf71c4;
-    color: white;
-}
-
-#green{
+#green {
     background-color:#1bdd55;
-    color: white;
-}
-
-#red{
-    background-color:#db152f;
     color: white;
 }
 
@@ -170,29 +123,64 @@ span:hover{
     color: #00A8B5;
 }
 
-@media(max-width:768px){
-    .content{
+#red {
+    background-color:#db152f;
+    color: white;
+}
+
+
+/* Animations */
+
+input:focus {
+    border-color: purple; 
+    outline: none;
+}
+
+button:hover {
+    opacity: 0.4;
+}
+
+button:focus{
+    outline: none;  
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+    .content {
         display: flex;
         flex-direction: column;
     }
 
-    section{
+    section {
         margin-bottom: 30px;
         width: 85vw;
     }
 
-    .btn button{
+    .btn button {
         margin: 0 7px;
     }
-
-   
 }
 
 @media only screen and (max-width: 748px) {
     .content {
-     flex-direction: column;
-     height: 100vh;
+        flex-direction: column;
+        height: 100vh;
     }
- }
+}
 
- 
+/*.detail {
+    background-color: rgba(71, 5, 71, 0.5);
+    width: 7px;
+    height: 32px;
+}
+*/

@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap">
     <link rel="stylesheet" href="../../public/styles/style.css">
-    <title> I need to learn </title>
+    <link rel="shortcut icon" href="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-computer-notifications-justicon-lineal-color-justicon.png" type="image/x-icon">
+    <title>I need to learn</title>
 </head>
-
 <body>
-
     <header>
-        <h1>Tecnologias que eu preciso aprender para me tornar um Dev Full Stack Java Jr </h1>
+        <h1>Tecnologias que eu preciso aprender para me tornar um Dev Full Stack Java Jr</h1>
     </header>
-    
-        <div class="content">
-
+        <main class="content">
             <section class="one-section">
-                <img src="../../public/assets/developer.gif" class="img-tech" alt="Imagem de um garoto no notebook">
-                <p id="error"> </p>
-                <input type="text" name="new-tec" class="input-tec" wrap="hard" placeholder="Digite uma nova tecnologia">
-                <button type="submit" class="add" id="primary-color"> + Aprender um nova tecnologia</button>
+                <img src="../../public/assets/developer.gif" 
+                     class="img-tech"
+                     alt="Imagem de um garoto no notebook"
+                >
+                <p id="error"></p>
+                <input type="text"
+                       name="new-tec" 
+                       class="input-tec" 
+                       wrap="hard" 
+                       placeholder="Digite uma nova tecnologia"
+                       autofocus
+                >
+                <button type="submit"
+                        class="add"
+                        id="primary-color"
+                        onclick="newTech()"
+                > + Aprender uma nova tecnologia
+                </button>
             </section> 
-
             <section class="two-section">
                 <div class="content-tech">                   
-                    <h2>Lista de tecnologias que eu preciso aprender </h2>
-                    <div id="task-content"  ondragenter="onDragEnter(event)" ondrop="onDrop(event)" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)">
-                    
-                        <ul id="list" > </ul>
-                                                   
+                    <h2>Lista de tecnologias que eu preciso aprender</h2>
+                    <div id="task-content"  
+                         ondragenter="onDragEnter(event)" 
+                         ondrop="onDrop(event)" 
+                         ondragover="onDragOver(event)" 
+                         ondragleave="onDragLeave(event)"
+                    >
+                        <ul id="list"></ul>                            
                     </div>   
                 </div>
-
                 <div class="btn">
-                    <button id="green" onclick="checkAll()">Selecione todos</button>
-                    <button id="red" onclick="removeAll()" >Excluir todos</button>
+                    <button id="green" onclick="checkAll()">
+                        Selecione todos
+                    </button>
+                    <button id="red" onclick="removeAll()">
+                        Excluir todos
+                    </button>
                 </div>
-                
             </section>
-        
-        </div>
-
-    
-    <script src="../../public/scripts/scripts.js"></script
-    
+        </main>
+    <script src="../../public/scripts/scripts.js"></script  
 </body>
-
 </html>
