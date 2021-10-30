@@ -20,7 +20,7 @@ function newTech() {
                                 onclick="checkItem(this)"
                             >
                               <p id="delete-item">${input.value}</p>
-                              <span onclick="removeItem(input.value)">
+                              <span onclick="removeItem(this)">
                                 <img id="img"
                                      src="../../public/assets/remove.svg" 
                                      alt="deletar um item">
@@ -51,12 +51,12 @@ function checkItem(item) {
 }
 
 // Remove items
-function removeItem(inp) {
-    let idx = techs.indexOf(inp.toLowerCase())
+function removeItem(item) {
+    let idx = techs.indexOf(item.toLowerCase())
     if (idx != -1) {
         techs.splice(idx, 1)
     }
-    
+    item.parentNode.remove()
 }    
 
 // Button check all
