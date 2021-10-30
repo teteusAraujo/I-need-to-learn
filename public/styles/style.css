@@ -47,8 +47,9 @@ main {
 }
 
 #error {
-  margin: 10px auto;
+  margin: 0 auto 1rem;
   color: #e6203b;
+  font-size: 1rem;
 }
 
 #new-tec {
@@ -70,18 +71,24 @@ main {
 }
 
 button {
-  width: 42vw;
   padding: 1.15rem;
   cursor: pointer;
   font-weight: bold;
   font-size: 0.9rem;
-  font-family: 'Ubuntu', sans-serif;
 
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0px 4px 6px rgba(150, 144, 144, 0.3);
+  box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3);
   background-color: #ab4dd6;
   color: white;
+
+  top: 0;
+  position: relative;
+  transition: all ease 0.3s;
+}
+
+#new-tec > button {
+  width: 42vw;
 }
 
 .two-section {
@@ -140,6 +147,7 @@ ul {
 }
 
 .buttons {
+  margin: 0.9rem auto 1rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -153,34 +161,25 @@ ul {
 #green {
   background-color: #1bdd55;
   color: white;
-  padding: 10px;
-
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 #red {
   background-color: #db152f;
   color: white;
-  padding: 10px;
-
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Animations */
 
-input:focus {
+#new-tec > input:focus {
   border-color: purple;
   outline: none;
 }
 
 button:hover {
-  opacity: 0.4;
+  opacity: 0.7;
+  top: -0.5rem;
+  border-radius: 20%;
+  box-shadow: 4px 4px 10px rgba(26, 25, 25, 0.835);
 }
 
 button:focus {
