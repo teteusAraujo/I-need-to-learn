@@ -11,7 +11,7 @@ const techs = []
 
 // Button new tech
 function newTech() {    
-    if (input.value != '' && notInTechs()) { 
+    if (input.value != null && notInTechs()) { 
         lista.innerHTML += `<li class="card"
                                 draggable="true" 
                                 ondragstart="onDragStart(event)" 
@@ -19,17 +19,16 @@ function newTech() {
                                 ondragend="onDragEnd(event)" 
                                 onclick="checkItem(this)"
                             >
-                                <p id="delete-item">${input.value}</p>
-                                <span onclick="removeItem(input.value)">
-                                    <img id="img"
-                                         src="../../public/assets/remove.svg" 
-                                         alt="deletar um item"
-                                    >
-                                </span>
+                              <p id="delete-item">${input.value}</p>
+                              <span onclick="removeItem(input.value)">
+                                <img id="img"
+                                     src="../../public/assets/remove.svg" 
+                                     alt="deletar um item">
+                              </span>
                             </li>`
         techs.push(input.value.toLowerCase());
-        input.value = ""
-        input.focus() 
+        //input.value = null
+        input.focus()
         error.innerHTML = ""
         //all.add()
     } else {
@@ -53,12 +52,11 @@ function checkItem(item) {
 
 // Remove items
 function removeItem(inp) {
-    let del = document.getElementById('delete-item')
     let idx = techs.indexOf(inp.toLowerCase())
     if (idx != -1) {
         techs.splice(idx, 1)
     }
-    del.parentNode.remove()
+    
 }    
 
 // Button check all
@@ -69,6 +67,7 @@ function checkAll(){
 // Button remove all
 function removeAll(){
     lista.innerHTML = ''
+    techs.removeAll()
 }
 
 

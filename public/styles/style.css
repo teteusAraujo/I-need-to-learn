@@ -47,7 +47,7 @@ main {
 }
 
 #error {
-  margin: 0 auto 1rem;
+  margin: -1rem auto 1rem;
   color: #e6203b;
   font-size: 1rem;
 }
@@ -124,12 +124,13 @@ ul {
 .card {
   width: 75vw;
   height: 6vh;
-  margin: 0 auto;
+  margin: 1rem auto;
   list-style: none;
 
   display: flex;
+  place-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 16px;
 
   border-radius: 12px;
   background-color: white;
@@ -137,7 +138,7 @@ ul {
 }
 
 .card > p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -159,7 +160,7 @@ ul {
 }
 
 #green {
-  background-color: #1bdd55;
+  background-color: #1dcf52;
   color: white;
 }
 
@@ -167,6 +168,7 @@ ul {
   background-color: #db152f;
   color: white;
 }
+
 
 /* Animations */
 
@@ -179,20 +181,17 @@ button:hover {
   opacity: 0.7;
   top: -0.5rem;
   border-radius: 20%;
-  box-shadow: 4px 4px 10px rgba(26, 25, 25, 0.835);
+  box-shadow: 4px 6px 15px rgba(26, 25, 25, 0.835);
 }
 
 button:focus {
   outline: none;
 }
 
-span:hover {
-  cursor: pointer;
-}
-
 li:hover {
   cursor: pointer;
 }
+
 
 /* Media Queries */
 
