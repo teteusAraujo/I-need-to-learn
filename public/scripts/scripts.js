@@ -56,7 +56,7 @@ function removeItem(item) {
     if (idx != -1) {
         techs.splice(idx, 1)
     }
-    item.parentNode.remove()
+    item.parentNode.remove() 
 }    
 
 // Button check all
