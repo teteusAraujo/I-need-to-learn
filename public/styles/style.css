@@ -94,7 +94,7 @@ main {
 .content-tech {
   width: 85vw;
   margin: 0 auto;
-  
+
   background-color: #eaecf3;
   border-radius: 5px 18px 18px 18px;
 }
@@ -123,15 +123,15 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  
+
   border-radius: 12px;
   background-color: white;
   box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4);
 }
 
 .card > p {
-    font-size: 1.2rem;
-    text-align: center;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 #img {
@@ -141,13 +141,8 @@ ul {
 
 .buttons {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  margin: 2em 3em 0 3em;
-}
-
-#green {
-  background-color: #1bdd55;
-  color: white;
 }
 
 .check {
@@ -155,9 +150,26 @@ ul {
   color: #00a8b5;
 }
 
+#green {
+  background-color: #1bdd55;
+  color: white;
+  padding: 10px;
+
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
 #red {
   background-color: #db152f;
   color: white;
+  padding: 10px;
+
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Animations */
