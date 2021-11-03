@@ -1,12 +1,12 @@
 <h3 align="center">
-    ## 🔖 Faça a sua lista de tecnologias para se tornar um dev full Syack Java Jr <br/>
+    ## 🔖 Faça a sua lista de tecnologias para se tornar um dev full Stack Java Jr <br/>
     <br><br>
 </h3>
 
 
-## 🔖 Informaçoes sobre a Lista <br/>
+## 🔖 Informações sobre a Lista <br/>
 
-A <strong>Lista</strong> é feita com os conhecimentos que a pessoa juga ser necessário para se tornar um dev Full Stack Java Jr <br/>
+A <strong>Lista</strong> é feita com os conhecimentos que a pessoa julga ser necessário para se tornar um dev Full Stack Java Jr <br/>
 
 ## 🖼 Screenshot das telas da aplicação <br/>
 
@@ -55,7 +55,7 @@ A <strong>Lista</strong> é feita com os conhecimentos que a pessoa juga ser nec
 <br/>
 
 ### :memo: Funcionalidades: 
-- poder adicionar e remover as tecnologias a ser aprendida
+- poder adicionar e remover as tecnologias a serem aprendidas
 - poder marcar tecnologias como aprendida
 - não pode adicionar um tecnologia vazia
 - Um botão para marcar e outro para deletar todas as tecnologias
@@ -76,7 +76,7 @@ git clone https://github.com/teteusAraujo/I-need-to-learn
 ## 🤔 Como contribuir <br/>
 
 - Faça um fork desse repositório; <br/>
-- Cria uma branch com a sua feature: `git checkout -b minha-feature`;<br/>
+- Crie uma branch com a sua feature: `git checkout -b minha-feature`;<br/>
 - Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`; <br/>
 - Faça push para a sua branch: `git push origin minha-feature`.<br/>
 <br/>
