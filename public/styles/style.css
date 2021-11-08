@@ -18,8 +18,8 @@ body {
 
 header {
   width: 90vw;
-  margin: 1rem 1rem 0;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 0.62rem;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
 }
 
 main {
-  width: 96vw;
+  width: 95vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -44,6 +44,7 @@ main {
   margin: 0 auto;
   height: 70vw;
   width: 75vw;
+  transition: all ease 1s;
 }
 
 #error {
@@ -54,7 +55,7 @@ main {
 
 #new-tec {
   width: 85vw;
-  margin: 0 auto 15px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -63,14 +64,15 @@ main {
 }
 
 #new-tec > input {
-  width: 42vw;
-  padding: 17px;
+  width: 50vw;
+  padding: 1rem;
   border: 2px solid #efedf0;
   border-radius: 8px;
   font-size: 1rem;
 }
 
 button {
+  width: 42vw;
   padding: 1.15rem;
   cursor: pointer;
   font-weight: bold;
@@ -88,12 +90,12 @@ button {
 }
 
 #new-tec > button {
-  width: 42vw;
+  width: 30vw;
 }
 
 .two-section {
   width: 90vw;
-  margin: 0 auto;
+  margin: 2rem auto;
   place-items: center;
   text-align: center;
 }
@@ -109,7 +111,7 @@ button {
 h2 {
   width: 80vw;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   color: #502153;
 }
@@ -130,7 +132,7 @@ ul {
   display: flex;
   place-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: 1rem;
 
   border-radius: 12px;
   background-color: white;
@@ -148,10 +150,11 @@ ul {
 }
 
 .buttons {
-  margin: 0.9rem auto 1rem;
+  margin: 2rem auto 1rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 0.5rem;
 }
 
 .check {
@@ -171,6 +174,11 @@ ul {
 
 
 /* Animations */
+
+.one-section > img:hover {
+  height: 80vw;
+  width: 85vw;
+}
 
 #new-tec > input:focus {
   border-color: purple;

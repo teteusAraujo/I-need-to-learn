@@ -1,10 +1,8 @@
 // ======= Variables/ DOM =======
-
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
 const lista = document.getElementById('list')
 const techs = []
-//const all = document.querySelector('.content-tech')
 
 
 // ======= Functions =======
@@ -12,28 +10,37 @@ const techs = []
 // Button new tech
 function newTech() {    
     if (input.value != null && notInTechs()) { 
-        lista.innerHTML += `<li class="card"
-                                draggable="true" 
-                                ondragstart="onDragStart(event)" 
-                                ondrag="onDrag(event)" 
-                                ondragend="onDragEnd(event)" 
-                                onclick="checkItem(this)"
-                            >
-                              <p id="delete-item">${input.value}</p>
-                              <span onclick="removeItem(this)">
-                                <img id="img"
-                                     src="../../public/assets/remove.svg" 
-                                     alt="deletar um item">
-                              </span>
-                            </li>`
+        let newLi = document.createElement('li')
+        newLi.setAttribute("class", "card")
+        newLi.setAttribute("draggable", "true")
+        newLi.setAttribute("ondragstart", "onDragStart(event)")
+        newLi.setAttribute("ondrag", "onDrag(event)")
+        newLi.setAttribute("ondragend", "onDragEnd(event)")
+        newLi.addEventListener('click', checkItem(this))
+        lista.appendChild(newLi)
+
+        let newP = document.createElement('p')
+        newP.setAttribute("id", "delete-item")
+        newP.innerHTML = `${input.value}`
+        newLi.appendChild(newP)
+
+        let newSpan = document.createElement('span')
+        newSpan.addEventListener('click', removeItem(this))
+        newLi.appendChild(newSpan)
+                                
+        let newImg = document.createElement('img')
+        newImg.setAttribute("id", "img")
+        newImg.setAttribute("src", "../../public/assets/remove.svg")
+        newImg.setAttribute("alt", "Deletar um item")
+        newSpan.appendChild(newImg)
+
         techs.push(input.value.toLowerCase());
-        //input.value = null
-        input.focus()
         error.innerHTML = ""
-        //all.add()
     } else {
         error.innerHTML = "Por favor, digite uma nova tecnologia."  
     } 
+    input.value = ''
+    input.focus()
 }
 
 // Input verify
@@ -45,19 +52,15 @@ function notInTechs() {
     }
 }
 
+// Remove items
+function removeItem(item) {
+    
+} 
+
 // Check items
 function checkItem(item) {
     item.classList.toggle('check')
 }
-
-// Remove items
-function removeItem(item) {
-    let idx = techs.indexOf(item.toLowerCase())
-    if (idx != -1) {
-        techs.splice(idx, 1)
-    }
-    item.parentNode.remove() 
-}    
 
 // Button check all
 function checkAll(){
