@@ -2,46 +2,10 @@
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
 const lista = document.getElementById('list')
-const techs = []
+let techs = []
 
 
 // ======= Functions =======
-
-// Button new tech
-function newTech() {    
-    if (input.value != null && notInTechs()) { 
-        let newLi = document.createElement('li')
-        newLi.setAttribute("class", "card")
-        newLi.setAttribute("draggable", "true")
-        newLi.setAttribute("ondragstart", "onDragStart(event)")
-        newLi.setAttribute("ondrag", "onDrag(event)")
-        newLi.setAttribute("ondragend", "onDragEnd(event)")
-        newLi.addEventListener('click', checkItem(this))
-        lista.appendChild(newLi)
-
-        let newP = document.createElement('p')
-        newP.setAttribute("id", "delete-item")
-        newP.innerHTML = `${input.value}`
-        newLi.appendChild(newP)
-
-        let newSpan = document.createElement('span')
-        newSpan.addEventListener('click', removeItem(this))
-        newLi.appendChild(newSpan)
-                                
-        let newImg = document.createElement('img')
-        newImg.setAttribute("id", "img")
-        newImg.setAttribute("src", "../../public/assets/remove.svg")
-        newImg.setAttribute("alt", "Deletar um item")
-        newSpan.appendChild(newImg)
-
-        techs.push(input.value.toLowerCase());
-        error.innerHTML = ""
-    } else {
-        error.innerHTML = "Por favor, digite uma nova tecnologia."  
-    } 
-    input.value = ''
-    input.focus()
-}
 
 // Input verify
 function notInTechs() {
@@ -52,14 +16,48 @@ function notInTechs() {
     }
 }
 
-// Remove items
-function removeItem(item) {
-    
-} 
+// Button new tech
+function newTech() {    
+    if (input.value != '' && notInTechs()) { 
+        let liElement = document.createElement('li')
+        liElement.setAttribute("class", "card")
+        liElement.setAttribute("draggable", "true")
+        liElement.setAttribute("ondragstart", "onDragStart(event)")
+        liElement.setAttribute("ondrag", "onDrag(event)")
+        liElement.setAttribute("ondragend", "onDragEnd(event)")
+        liElement.addEventListener('click', () => {
+            liElement.classList.toggle('check')
+        })
+        lista.appendChild(liElement)
 
-// Check items
-function checkItem(item) {
-    item.classList.toggle('check')
+        let pElement = document.createElement('p')
+        pElement.setAttribute("id", "delete-item")
+        pElement.innerHTML = `${input.value}`
+        liElement.appendChild(pElement)
+
+        let spanElement = document.createElement('span')
+        spanElement.addEventListener('click', () => {
+            lista.removeChild(liElement);
+            let idx = techs.indexOf(input.value.toLowerCase())
+                if (idx != -1) {
+                    techs.splice(idx, 1)
+                }
+        })
+        liElement.appendChild(spanElement)
+                                
+        let imgElement = document.createElement('img')
+        imgElement.setAttribute("id", "img")
+        imgElement.setAttribute("src", "../../public/assets/remove.svg")
+        imgElement.setAttribute("alt", "Deletar um item")
+        spanElement.appendChild(imgElement)
+
+        techs.push(input.value.toLowerCase());
+        error.innerHTML = ""
+    } else {
+        error.innerHTML = "Por favor, digite uma nova tecnologia."  
+    } 
+    input.value = ''
+    input.focus()
 }
 
 // Button check all
@@ -70,13 +68,12 @@ function checkAll(){
 // Button remove all
 function removeAll(){
     lista.innerHTML = ''
-    techs.removeAll()
+    techs = []
 }
 
 
 // ======= Drag Events =======
 
-// .card 
 function onDragStart(e) {
     e.dataTransfer.setData("Text", e.target.id)
     e.target.style.background = "rgba(128, 0, 128, 0.5)"  
