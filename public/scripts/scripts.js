@@ -25,7 +25,7 @@ function newTech() {
         liElement.setAttribute("ondragstart", "onDragStart(event)")
         liElement.setAttribute("ondrag", "onDrag(event)")
         liElement.setAttribute("ondragend", "onDragEnd(event)")
-        liElement.addEventListener('click', () => {
+        liElement.addEventListener('click', () => {    // Check item
             liElement.classList.toggle('check')
         })
         lista.appendChild(liElement)
@@ -36,17 +36,17 @@ function newTech() {
         liElement.appendChild(pElement)
 
         let spanElement = document.createElement('span')
-        spanElement.addEventListener('click', () => {
+        spanElement.addEventListener('click', () => {    // Delete item
             lista.removeChild(liElement);
             let idx = techs.indexOf(input.value.toLowerCase())
-                if (idx != -1) {
+                if (idx != undefined) {
                     techs.splice(idx, 1)
                 }
         })
         liElement.appendChild(spanElement)
                                 
         let imgElement = document.createElement('img')
-        imgElement.setAttribute("id", "img")
+        imgElement.setAttribute("id", "img-del")
         imgElement.setAttribute("src", "../../public/assets/remove.svg")
         imgElement.setAttribute("alt", "Deletar um item")
         spanElement.appendChild(imgElement)
@@ -61,12 +61,12 @@ function newTech() {
 }
 
 // Button check all
-function checkAll(){
+function checkAll() {
     lista.classList.toggle('check')
 }
 
 // Button remove all
-function removeAll(){
+function removeAll() {
     lista.innerHTML = ''
     techs = []
 }
@@ -105,4 +105,3 @@ function onDragOver(e) {
 function onDragLeave(e){
 
 }
-

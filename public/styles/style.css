@@ -64,7 +64,7 @@ main {
 }
 
 #new-tec > input {
-  width: 50vw;
+  width: 52vw;
   padding: 1rem;
   border: 2px solid #efedf0;
   border-radius: 8px;
@@ -90,7 +90,7 @@ button {
 }
 
 #new-tec > button {
-  width: 30vw;
+  width: 33vw;
 }
 
 .two-section {
@@ -109,7 +109,7 @@ button {
 }
 
 h2 {
-  width: 80vw;
+  width: 85vw;
   margin: 0 auto;
   padding: 1.25rem;
   text-align: center;
@@ -117,10 +117,11 @@ h2 {
 }
 
 ul {
-  width: 80vw;
+  width: 85vw;
   height: 50vh;
   margin: 0 auto;
-  padding: 20px;
+  
+  overflow: auto;
 }
 
 .card {
@@ -144,7 +145,7 @@ ul {
   text-align: center;
 }
 
-#img {
+#img-del {
   width: 2rem;
   height: 2rem;
 }
@@ -173,11 +174,11 @@ ul {
 }
 
 
-/* Animations */
+/* ===== Animations ===== */
 
 .one-section > img:hover {
-  height: 80vw;
-  width: 85vw;
+  height: 78vw;
+  width: 83vw;
 }
 
 #new-tec > input:focus {
@@ -201,9 +202,9 @@ li:hover {
 }
 
 
-/* Media Queries */
+/* ===== Media Queries ===== */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .content {
     display: flex;
     flex-direction: column;
@@ -217,7 +218,7 @@ li:hover {
   .btn button {
     margin: 0 7px;
   }
-
+  
   /*.content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
