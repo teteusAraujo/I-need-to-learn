@@ -124,7 +124,7 @@ ul {
   overflow: auto;
 }
 
-.card {
+#card {
   width: 75vw;
   height: 6vh;
   margin: 1rem auto;
@@ -140,7 +140,7 @@ ul {
   box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4);
 }
 
-.card > p {
+#card > p {
   font-size: 1.1rem;
   text-align: center;
 }
@@ -234,7 +234,7 @@ li:hover {
     max-width: 36rem;
   }
 
-  .card {
+  #card {
     width: 65vw;
     max-width: 31rem;
   }
@@ -307,6 +307,8 @@ li:hover {
   .content-tech {
     width: 100%;
     max-width: 34rem;
+
+    height: auto;
     margin: 4rem auto 2rem;
   }
   
@@ -316,16 +318,16 @@ li:hover {
   
   ul {
     width: 90%;
-    height: 20rem;
     margin: 0 auto;
-    
+
+    height: 17rem;
+    max-height: 30rem;
     overflow: auto;
   }
   
-  .card {
+  #card {
     width: 85%;
   }
-  
   
   .buttons {
     width: 25rem;

@@ -2,12 +2,13 @@
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
 const lista = document.getElementById('list')
+const content = document.querySelector('.content-tech')
 let techs = []
 
 
 // ======= Functions =======
 
-// Input verify
+// == Input verify ==
 function notInTechs() {
     if (techs.indexOf(input.value.toLowerCase()) == -1) {
         return true
@@ -16,15 +17,22 @@ function notInTechs() {
     }
 }
 
-// Button new tech
+// == Button new tech ==
+input.addEventListener('keyup', (event) => {
+    if (event.keyCode == 13) {
+        newTech()
+    }
+})
+
 function newTech() {    
     if (input.value != '' && notInTechs()) { 
         let liElement = document.createElement('li')
-        liElement.setAttribute("class", "card")
+        liElement.setAttribute("id", "card")
         liElement.setAttribute("draggable", "true")
-        liElement.setAttribute("ondragstart", "onDragStart(event)")
-        liElement.setAttribute("ondrag", "onDrag(event)")
-        liElement.setAttribute("ondragend", "onDragEnd(event)")
+
+        liElement.addEventListener('dragstart', onDragStart)
+        liElement.addEventListener('drag', onDrag)
+        liElement.addEventListener('dragend', onDragEnd)
         liElement.addEventListener('click', () => {    // Check item
             liElement.classList.toggle('check')
         })
@@ -53,6 +61,12 @@ function newTech() {
 
         techs.push(input.value.toLowerCase());
         error.innerHTML = ""
+
+        if (techs.length >= 4) {
+            lista.style.height = 'auto'
+            content.style.margin = '1rem auto 2rem'
+        }
+
     } else {
         error.innerHTML = "Por favor, digite uma nova tecnologia."  
     } 
@@ -60,48 +74,51 @@ function newTech() {
     input.focus()
 }
 
-// Button check all
+// == Button check all ==
 function checkAll() {
     lista.classList.toggle('check')
 }
 
-// Button remove all
+// == Button remove all ==
 function removeAll() {
     lista.innerHTML = ''
     techs = []
+    lista.style.height = '17rem'
+    content.style.margin = '4rem auto 2rem'
 }
 
 
 // ======= Drag Events =======
 
+// == Draggable element ==
 function onDragStart(e) {
-    e.dataTransfer.setData("Text", e.target.id)
-    e.target.style.background = "rgba(128, 0, 128, 0.5)"  
+    e.dataTransfer.setData('text', e.target.id)
+    e.target.style.background = 'rgba(128, 0, 128, 0.5)'
 }
 
 function onDrag(e) {
-    e.target.style.cursor="move"
+    e.target.style.cursor = 'move'
 }
 
-function onDragEnd(e){
-    e.target.style.background = ""
+function onDragEnd(e) {
+    e.target.style.background = ''
 }
 
-// #task-content
+// == Drop targets ==
 function onDragEnter(e) {
-    
-}
-
-function onDrop(e){
-    var data = e.dataTransfer.getData("Text")
-    document.getElementById('task-content').appendChild(document.getElementById(data))
-    e.preventDefault(); 
+    e.preventDefault()
 }
 
 function onDragOver(e) {
-    e.preventDefault();    
+    e.preventDefault()
 }
 
-function onDragLeave(e){
+function onDragLeave() {
+}
 
+function onDrop(e) {
+    e.preventDefault()
+
+    var data = e.dataTransfer.getData('text')
+    e.target.appendChild(document.getElementById(data))
 }
