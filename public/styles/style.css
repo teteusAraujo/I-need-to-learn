@@ -18,7 +18,7 @@ body {
 
 header {
   width: 90vw;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   padding: 0.62rem;
 }
 
@@ -29,7 +29,7 @@ h1 {
   color: #502153;
 }
 
-main {
+#content {
   width: 95vw;
   margin: 0 auto;
   text-align: center;
@@ -68,11 +68,11 @@ main {
   padding: 1rem;
   border: 2px solid #efedf0;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 button {
-  width: 42vw;
+  width: 30vw;
   padding: 1.15rem;
   cursor: pointer;
   font-weight: bold;
@@ -189,7 +189,7 @@ ul {
 button:hover {
   opacity: 0.7;
   top: -0.5rem;
-  border-radius: 20%;
+  border-radius: 10%;
   box-shadow: 4px 6px 15px rgba(26, 25, 25, 0.835);
 }
 
@@ -204,38 +204,130 @@ li:hover {
 
 /* ===== Media Queries ===== */
 
-@media (min-width: 768px) {
-  .content {
-    display: flex;
-    flex-direction: column;
+@media only screen and (min-width: 700px) {   /* == Tablets == */
+  .one-section > img {
+    height: 60vw;
+    width: 60vw;
   }
 
-  section {
-    margin-bottom: 30px;
-    width: 85vw;
+  .one-section > img:hover {
+    height: 68vw;
+    width: 68vw;
   }
 
-  .btn button {
-    margin: 0 7px;
+  #new-tec {
+    width: 70vw;
   }
-  
-  /*.content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 45px;
-    max-width: 95vw;
-    height: 95vh;
-    align-items: center;
-    justify-content: center;
-    margin: 0 45px;
-}*/
+
+  .content-tech {
+    width: 80vw;
+  }
+
+  h2 {
+    width: 75vw;
+  }
+
+  ul {
+    width: 70vw;
+  }
+
+  .card {
+    width: 65vw;
+  }
+
+  button {
+    width: 24vw;
+  }
 }
 
-@media only screen and (max-width: 748px) {
-  .content {
-    flex-direction: column;
-    height: 100vh;
+@media only screen and (min-width: 900px) {   /* == Desktops == */
+  header {
+    width: 100%;
+    margin: -3rem auto;
   }
+
+  #content {
+    margin: -3rem auto 0;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .one-section {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .one-section > img {
+    margin: 0 auto;
+    height: 28rem;
+    width: 28rem;
+    transition: all ease 1s;
+  }
+
+  .one-section > img:hover {
+    height: 31rem;
+    width: 31rem;
+    margin-top: -1rem;
+    margin-left: -.6rem;
+  }
+  
+  #new-tec {
+    width: 50%;
+    margin: 0 auto;
+  
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+  }
+  
+  #new-tec > input {
+    width: 28rem;
+  }
+  
+  button {
+    width: 10rem;
+  }
+
+  #new-tec > button {
+    width: 20rem;
+    margin-top: .5rem;
+  }
+
+  .two-section {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .content-tech {
+    width: 100%;
+    max-width: 34rem;
+    margin: 4rem auto 2rem;
+  }
+  
+  h2 {
+    width: 90%;
+  }
+  
+  ul {
+    width: 90%;
+    height: 20rem;
+    margin: 0 auto;
+    
+    overflow: auto;
+  }
+  
+  .card {
+    width: 85%;
+  }
+  
+  
+  .buttons {
+    width: 25rem;
+    margin: 0 auto 1rem;
+  }
+
 }
 
 /*.detail {
