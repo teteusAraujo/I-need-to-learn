@@ -221,18 +221,22 @@ li:hover {
 
   .content-tech {
     width: 80vw;
+    max-width: 36rem;
   }
 
   h2 {
     width: 75vw;
+    max-width: 36rem;
   }
 
   ul {
     width: 70vw;
+    max-width: 36rem;
   }
 
   .card {
     width: 65vw;
+    max-width: 31rem;
   }
 
   button {
