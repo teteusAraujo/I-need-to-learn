@@ -1,8 +1,8 @@
 // ======= Variables/ DOM =======
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
-const lista = document.getElementById('list')
 const content = document.querySelector('.content-tech')
+const list = document.querySelector('.draggable-list')
 let techs = []
 
 
@@ -27,16 +27,13 @@ input.addEventListener('keyup', (event) => {
 function newTech() {    
     if (input.value != '' && notInTechs()) { 
         let liElement = document.createElement('li')
-        liElement.setAttribute("id", "card")
+        liElement.setAttribute("class", "card")
         liElement.setAttribute("draggable", "true")
 
-        liElement.addEventListener('dragstart', onDragStart)
-        liElement.addEventListener('drag', onDrag)
-        liElement.addEventListener('dragend', onDragEnd)
         liElement.addEventListener('click', () => {    // Check item
             liElement.classList.toggle('check')
         })
-        lista.appendChild(liElement)
+        list.appendChild(liElement)
 
         let pElement = document.createElement('p')
         pElement.setAttribute("id", "delete-item")
@@ -45,7 +42,7 @@ function newTech() {
 
         let spanElement = document.createElement('span')
         spanElement.addEventListener('click', () => {    // Delete item
-            lista.removeChild(liElement);
+            list.removeChild(liElement);
             let idx = techs.indexOf(input.value.toLowerCase())
                 if (idx != undefined) {
                     techs.splice(idx, 1)
@@ -63,7 +60,7 @@ function newTech() {
         error.innerHTML = ""
 
         if (techs.length >= 4) {
-            lista.style.height = 'auto'
+            list.style.height = 'auto'
             content.style.margin = '1rem auto 2rem'
         }
 
@@ -76,23 +73,27 @@ function newTech() {
 
 // == Button check all ==
 function checkAll() {
-    lista.classList.toggle('check')
+    list.classList.toggle('check')
 }
 
 // == Button remove all ==
 function removeAll() {
-    lista.innerHTML = ''
+    list.innerHTML = ''
     techs = []
-    lista.style.height = '17rem'
+    list.style.height = '17rem'
     content.style.margin = '4rem auto 2rem'
 }
 
 
 // ======= Drag Events =======
 
-// == Draggable element ==
+new Sortable(list, {
+    animation: 350
+})
+
+/*// == Draggable element ==
 function onDragStart(e) {
-    e.dataTransfer.setData('text', e.target.id)
+    e.dataTransfer.setData('text/plain', e.target.id)
     e.target.style.background = 'rgba(128, 0, 128, 0.5)'
 }
 
@@ -102,23 +103,27 @@ function onDrag(e) {
 
 function onDragEnd(e) {
     e.target.style.background = ''
+    
 }
 
 // == Drop targets ==
-function onDragEnter(e) {
-    e.preventDefault()
+function onDragEnter(ev) {
+    ev.preventDefault()
 }
 
-function onDragOver(e) {
-    e.preventDefault()
+function onDragOver(ev) {
+    ev.preventDefault()
 }
 
-function onDragLeave() {
+function onDragLeave(ev) {
+    ev.classList.remove('over')
 }
 
-function onDrop(e) {
-    e.preventDefault()
+function onDrop(ev) {
+    const id = ev.dataTransfer.getData('text')
+    const draggable = document.getElementById(id)
 
-    var data = e.dataTransfer.getData('text')
-    e.target.appendChild(document.getElementById(data))
+    ev.target.appendChild(draggable)
+    ev.dataTransfer.clearData()
 }
+*/

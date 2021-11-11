@@ -116,7 +116,7 @@ h2 {
   color: #502153;
 }
 
-ul {
+#draggable-list {
   width: 85vw;
   height: 50vh;
   margin: 0 auto;
@@ -124,7 +124,7 @@ ul {
   overflow: auto;
 }
 
-#card {
+.card {
   width: 75vw;
   height: 6vh;
   margin: 1rem auto;
@@ -140,7 +140,7 @@ ul {
   box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4);
 }
 
-#card > p {
+.card > p {
   font-size: 1.1rem;
   text-align: center;
 }
@@ -229,12 +229,12 @@ li:hover {
     max-width: 36rem;
   }
 
-  ul {
+  .draggable-list {
     width: 70vw;
     max-width: 36rem;
   }
 
-  #card {
+  .card {
     width: 65vw;
     max-width: 31rem;
   }
@@ -316,7 +316,7 @@ li:hover {
     width: 90%;
   }
   
-  ul {
+  .draggable-list {
     width: 90%;
     margin: 0 auto;
 
@@ -325,7 +325,7 @@ li:hover {
     overflow: auto;
   }
   
-  #card {
+  .card {
     width: 85%;
   }
   
@@ -335,10 +335,3 @@ li:hover {
   }
 
 }
-
-/*.detail {
-    background-color: rgba(71, 5, 71, 0.5);
-    width: 7px;
-    height: 32px;
-}
-*/
