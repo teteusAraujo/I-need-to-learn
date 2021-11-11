@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 html,
 body {
   height: 100%;
-  font-family: 'Ubuntu', sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
 body {
