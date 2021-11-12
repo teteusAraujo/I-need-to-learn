@@ -8,7 +8,7 @@ A <strong>lista</strong> é composta pelos conhecimentos que a pessoa julga ser 
 
 ## 🖼 Screenshot das telas da aplicação
 
-<img src="./public/assets/demo.png" alt="">
+<img src="../public/assets/demo.png" alt="">
 <br/>
 
 
