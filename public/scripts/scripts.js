@@ -2,22 +2,13 @@
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
 const content = document.querySelector('.content-tech')
-const list = document.querySelector('.draggable-list')
+const list = document.querySelector('#list')
 let techs = []
 
 
 // ======= Functions =======
 
-// == Input verify ==
-function notInTechs() {
-    if (techs.indexOf(input.value.toLowerCase()) == -1) {
-        return true
-    } else {
-        return false
-    }
-}
-
-// == Button new tech ==
+// Button new tech ==
 input.addEventListener('keyup', (event) => {
     if (event.keyCode == 13) {
         newTech()
@@ -36,7 +27,7 @@ function newTech() {
         list.appendChild(liElement)
 
         let pElement = document.createElement('p')
-        pElement.setAttribute("id", "delete-item")
+        pElement.setAttribute("id", "delete-item") 
         pElement.innerHTML = `${input.value}`
         liElement.appendChild(pElement)
 
@@ -47,6 +38,10 @@ function newTech() {
                 if (idx != undefined) {
                     techs.splice(idx, 1)
                 }
+                if (techs.length <= 5) {
+                    list.style.height = '22rem'
+                    content.style.margin = '4rem auto 2rem'
+                }
         })
         liElement.appendChild(spanElement)
                                 
@@ -56,12 +51,12 @@ function newTech() {
         imgElement.setAttribute("alt", "Deletar um item")
         spanElement.appendChild(imgElement)
 
-        techs.push(input.value.toLowerCase());
+        techs.push(input.value.toLowerCase())
         error.innerHTML = ""
 
-        if (techs.length >= 4) {
+        if (techs.length > 5) {
             list.style.height = 'auto'
-            content.style.margin = '1rem auto 2rem'
+            content.style.margin = '2rem auto 2rem'
         }
 
     } else {
@@ -71,16 +66,25 @@ function newTech() {
     input.focus()
 }
 
-// == Button check all ==
+// Input verify
+function notInTechs() {
+    if (techs.indexOf(input.value.toLowerCase()) == -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// Button check all
 function checkAll() {
     list.classList.toggle('check')
 }
 
-// == Button remove all ==
+// Button remove all
 function removeAll() {
     list.innerHTML = ''
     techs = []
-    list.style.height = '17rem'
+    list.style.height = '22rem'
     content.style.margin = '4rem auto 2rem'
 }
 
@@ -90,40 +94,3 @@ function removeAll() {
 new Sortable(list, {
     animation: 350
 })
-
-/*// == Draggable element ==
-function onDragStart(e) {
-    e.dataTransfer.setData('text/plain', e.target.id)
-    e.target.style.background = 'rgba(128, 0, 128, 0.5)'
-}
-
-function onDrag(e) {
-    e.target.style.cursor = 'move'
-}
-
-function onDragEnd(e) {
-    e.target.style.background = ''
-    
-}
-
-// == Drop targets ==
-function onDragEnter(ev) {
-    ev.preventDefault()
-}
-
-function onDragOver(ev) {
-    ev.preventDefault()
-}
-
-function onDragLeave(ev) {
-    ev.classList.remove('over')
-}
-
-function onDrop(ev) {
-    const id = ev.dataTransfer.getData('text')
-    const draggable = document.getElementById(id)
-
-    ev.target.appendChild(draggable)
-    ev.dataTransfer.clearData()
-}
-*/

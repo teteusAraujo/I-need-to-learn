@@ -43,7 +43,10 @@ h1 {
 .one-section > img {
   margin: 0 auto;
   height: 70vw;
+  max-height: 28rem;
+
   width: 75vw;
+  max-width: 28rem;
   transition: all ease 1s;
 }
 
@@ -72,7 +75,8 @@ h1 {
 }
 
 button {
-  width: 30vw;
+  width: 31vw;
+  max-width: 10rem;
   padding: 1.15rem;
   cursor: pointer;
   font-weight: bold;
@@ -81,7 +85,7 @@ button {
   border: none;
   border-radius: 0.5rem;
   box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3);
-  background-color: #ab4dd6;
+  background-color: #8a45aa;
   color: white;
 
   top: 0;
@@ -91,6 +95,7 @@ button {
 
 #new-tec > button {
   width: 33vw;
+  min-width: 12rem;
 }
 
 .two-section {
@@ -116,11 +121,10 @@ h2 {
   color: #502153;
 }
 
-#draggable-list {
+#list {
   width: 85vw;
   height: 50vh;
   margin: 0 auto;
-  
   overflow: auto;
 }
 
@@ -176,11 +180,6 @@ h2 {
 
 /* ===== Animations ===== */
 
-.one-section > img:hover {
-  height: 78vw;
-  width: 83vw;
-}
-
 #new-tec > input:focus {
   border-color: purple;
   outline: none;
@@ -210,37 +209,36 @@ li:hover {
     width: 60vw;
   }
 
-  .one-section > img:hover {
-    height: 68vw;
-    width: 68vw;
+  #new-tec {
+    max-width: 38rem;
   }
 
-  #new-tec {
-    width: 70vw;
+  #new-tec > input {
+    max-width: 23rem;
+  }
+
+  #new-tec > button {
+    max-width: 13rem;
   }
 
   .content-tech {
-    width: 80vw;
-    max-width: 36rem;
+    max-width: 38rem;
   }
 
   h2 {
-    width: 75vw;
     max-width: 36rem;
   }
 
-  .draggable-list {
-    width: 70vw;
+  #list {
     max-width: 36rem;
   }
 
   .card {
-    width: 65vw;
     max-width: 31rem;
   }
 
-  button {
-    width: 24vw;
+  .buttons {
+    max-width: 36rem;
   }
 }
 
@@ -265,16 +263,15 @@ li:hover {
   
   .one-section > img {
     margin: 0 auto;
-    height: 28rem;
-    width: 28rem;
+    height: 60vh;
+    width: 60vw;
     transition: all ease 1s;
   }
 
   .one-section > img:hover {
-    height: 31rem;
-    width: 31rem;
+    max-height: 29rem;
+    max-width: 29rem;
     margin-top: -1rem;
-    margin-left: -.6rem;
   }
   
   #new-tec {
@@ -287,15 +284,11 @@ li:hover {
   }
   
   #new-tec > input {
-    width: 28rem;
-  }
-  
-  button {
-    width: 10rem;
+    max-width: 28rem;
   }
 
   #new-tec > button {
-    width: 20rem;
+    max-width: 20rem;
     margin-top: .5rem;
   }
 
@@ -306,7 +299,7 @@ li:hover {
   
   .content-tech {
     width: 100%;
-    max-width: 34rem;
+    max-width: 44rem;
 
     height: auto;
     margin: 4rem auto 2rem;
@@ -316,11 +309,11 @@ li:hover {
     width: 90%;
   }
   
-  .draggable-list {
+  #list {
     width: 90%;
     margin: 0 auto;
 
-    height: 17rem;
+    height: 22rem;
     max-height: 30rem;
     overflow: auto;
   }
@@ -334,4 +327,12 @@ li:hover {
     margin: 0 auto 1rem;
   }
 
+}
+
+@media only screen and (min-width: 1100px) {   /* == Desktops == */
+  .one-section > img:hover {
+    max-height: 31rem;
+    max-width: 31rem;
+    margin-top: -1rem;
+  }
 }

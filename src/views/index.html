@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"/>  <!--Google fonts API-->
     <link rel="stylesheet" href="../../public/styles/style.css" />
     <link rel="shortcut icon" href="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/  external-computer-notifications-justicon-lineal-color-justicon.png" type="image/x-icon"/>  <!--Page title icon-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.js" integrity="sha512-Fc8SDJVBwajCGX0A9z8lBeRPaCjR25Ek577z9PtQLB7CLBz7Mw1XhjbcD2yDWrGszL/uezKGidtGCng6Fhz3+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.js" integrity="sha512-Fc8SDJVBwajCGX0A9z8lBeRPaCjR25Ek577z9PtQLB7CLBz7Mw1XhjbcD2yDWrGszL/uezKGidtGCng6Fhz3+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   <!--Sortable library-->
     <title>I need to learn...</title>
   </head>
   <body>
@@ -25,22 +25,16 @@
             wrap="hard"
             placeholder="Digite uma tecnologia"
           />
-          <button
-            type="submit"
-            id="primary-color"
-            class="add-tec"
-            onclick="newTech()"
-          > + Adicionar
-          </button>
+          <button type="submit" onclick="newTech()"> + Adicionar </button>
         </div>
       </section>
       <section class="two-section">
         <div class="content-tech">
           <h2>Lista de tecnologias</h2>
-          <ul class="draggable-list"></ul>
+          <ul id="list"></ul>
         </div>
         <div class="buttons">
-          <button id="green" onclick="checkAll()">Selecione todos</button>
+          <button id="green" onclick="checkAll()">Selecionar todos</button>
           <button id="red" onclick="removeAll()">Excluir todos</button>
         </div>
       </section>
