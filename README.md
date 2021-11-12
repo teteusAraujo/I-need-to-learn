@@ -4,11 +4,12 @@
 
 ## 🔖 Informações
 
-A <strong>lista</strong> é composta pelos conhecimentos que a pessoa julga ser necessário para tornar-se um dev Full Stack Java Jr
+- A <strong>lista</strong> será composta pelos conhecimentos que o usuário julgar necessário para tornar-se um dev Full Stack Java Jr.
+- 🖱️ [Clique aqui](https://rogeriofrsouza.github.io/I-need-to-learn/) para acessar o site.
 
 ## 🖼 Screenshot das telas da aplicação
 
-<img src="../public/assets/demo.png" alt="">
+<img src="docs/public/assets/demo.png" alt="">
 <br/>
 
 
