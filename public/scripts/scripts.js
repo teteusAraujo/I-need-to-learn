@@ -1,40 +1,69 @@
 // ======= Variables/ DOM =======
-
 const error = document.getElementById('error')
 const input = document.querySelector('.input-tec')
-const lista = document.getElementById('list')
-const techs = []
-//const all = document.querySelector('.content-tech')
+const content = document.querySelector('.content-tech')
+const list = document.querySelector('#list')
+let techs = []
 
 
 // ======= Functions =======
 
-// Button new tech
+// Button new tech ==
+input.addEventListener('keyup', (event) => {
+    if (event.keyCode == 13) {
+        newTech()
+    }
+})
+
 function newTech() {    
     if (input.value != '' && notInTechs()) { 
-        lista.innerHTML += `<li class="card"
-                                draggable="true" 
-                                ondragstart="onDragStart(event)" 
-                                ondrag="onDrag(event)" 
-                                ondragend="onDragEnd(event)" 
-                                onclick="checkItem(this)"
-                            >
-                                <p id="delete-item">${input.value}</p>
-                                <span onclick="removeItem(input.value)">
-                                    <img id="img"
-                                         src="../../public/assets/remove.svg" 
-                                         alt="deletar um item"
-                                    >
-                                </span>
-                            </li>`
-        techs.push(input.value.toLowerCase());
-        input.value = ""
-        input.focus() 
+        let liElement = document.createElement('li')
+        liElement.setAttribute("class", "card")
+        liElement.setAttribute("draggable", "true")
+
+        liElement.addEventListener('click', () => {    // Check item
+            liElement.classList.toggle('check')
+        })
+        list.appendChild(liElement)
+
+        let pElement = document.createElement('p')
+        pElement.setAttribute("id", "delete-item") 
+        pElement.innerHTML = `${input.value}`
+        liElement.appendChild(pElement)
+
+        let spanElement = document.createElement('span')
+        spanElement.addEventListener('click', () => {    // Delete item
+            list.removeChild(liElement);
+            let idx = techs.indexOf(input.value.toLowerCase())
+                if (idx != undefined) {
+                    techs.splice(idx, 1)
+                }
+                if (techs.length <= 5) {
+                    list.style.height = '22rem'
+                    content.style.margin = '4rem auto 2rem'
+                }
+        })
+        liElement.appendChild(spanElement)
+                                
+        let imgElement = document.createElement('img')
+        imgElement.setAttribute("id", "img-del")
+        imgElement.setAttribute("src", "../../public/assets/remove.svg")
+        imgElement.setAttribute("alt", "Deletar um item")
+        spanElement.appendChild(imgElement)
+
+        techs.push(input.value.toLowerCase())
         error.innerHTML = ""
-        //all.add()
+
+        if (techs.length > 5) {
+            list.style.height = 'auto'
+            content.style.margin = '2rem auto 2rem'
+        }
+
     } else {
         error.innerHTML = "Por favor, digite uma nova tecnologia."  
     } 
+    input.value = ''
+    input.focus()
 }
 
 // Input verify
@@ -46,64 +75,27 @@ function notInTechs() {
     }
 }
 
-// Check items
-function checkItem(item) {
-    item.classList.toggle('check')
-}
-
-// Remove items
-function removeItem(inp) {
-    let del = document.getElementById('delete-item')
-    let idx = techs.indexOf(inp.toLowerCase())
-    if (idx != -1) {
-        techs.splice(idx, 1)
-    }
-    del.parentNode.remove()
-}    
-
 // Button check all
-function checkAll(){
-    lista.classList.toggle('check')
+function checkAll() {
+    if (techs.length == 0) {
+        error.innerHTML = "Por favor, digite uma nova tecnologia."
+    } else {
+        list.classList.toggle('check')
+    }
+    
 }
 
 // Button remove all
-function removeAll(){
-    lista.innerHTML = ''
+function removeAll() {
+    list.innerHTML = ''
+    techs = []
+    list.style.height = '22rem'
+    content.style.margin = '4rem auto 2rem'
 }
 
 
 // ======= Drag Events =======
 
-// .card 
-function onDragStart(e) {
-    e.dataTransfer.setData("Text", e.target.id)
-    e.target.style.background = "rgba(128, 0, 128, 0.5)"  
-}
-
-function onDrag(e) {
-    e.target.style.cursor="move"
-}
-
-function onDragEnd(e){
-    e.target.style.background = ""
-}
-
-// #task-content
-function onDragEnter(e) {
-    
-}
-
-function onDrop(e){
-    var data = e.dataTransfer.getData("Text")
-    document.getElementById('task-content').appendChild(document.getElementById(data))
-    e.preventDefault(); 
-}
-
-function onDragOver(e) {
-    e.preventDefault();    
-}
-
-function onDragLeave(e){
-
-}
-
+new Sortable(list, {
+    animation: 350
+})

@@ -1,5 +1,5 @@
 <h3 align="center">
-    ## 🔖 Faça a sua lista de tecnologias para se tornar um dev full Syack Java Jr <br/>
+   🔖 Faça a sua lista de tecnologias para se tornar um Dev Full Stack Java Jr <br/>
     <br><br>
 </h3>
 
