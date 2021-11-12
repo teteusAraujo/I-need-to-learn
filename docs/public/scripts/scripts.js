@@ -47,7 +47,7 @@ function newTech() {
                                 
         let imgElement = document.createElement('img')
         imgElement.setAttribute("id", "img-del")
-        imgElement.setAttribute("src", "../../public/assets/remove.svg")
+        imgElement.setAttribute("src", "public/assets/remove.svg")
         imgElement.setAttribute("alt", "Deletar um item")
         spanElement.appendChild(imgElement)
 
