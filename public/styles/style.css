@@ -95,7 +95,6 @@ button {
 
 #new-tec > button {
   width: 33vw;
-  min-width: 12rem;
 }
 
 .two-section {
@@ -210,15 +209,15 @@ li:hover {
   }
 
   #new-tec {
-    max-width: 38rem;
+    max-width: 36rem;
   }
 
   #new-tec > input {
-    max-width: 23rem;
+    max-width: 22.5rem;
   }
 
   #new-tec > button {
-    max-width: 13rem;
+    max-width: 12.5rem;
   }
 
   .content-tech {

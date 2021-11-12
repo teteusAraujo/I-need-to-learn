@@ -77,7 +77,12 @@ function notInTechs() {
 
 // Button check all
 function checkAll() {
-    list.classList.toggle('check')
+    if (techs.length == 0) {
+        error.innerHTML = "Por favor, digite uma nova tecnologia."
+    } else {
+        list.classList.toggle('check')
+    }
+    
 }
 
 // Button remove all
