@@ -57,7 +57,7 @@ h1 {
 }
 
 #new-tec {
-  width: 85vw;
+  width: 90vw;
   margin: 0 auto;
 
   display: flex;
@@ -67,11 +67,12 @@ h1 {
 }
 
 #new-tec > input {
-  width: 52vw;
-  padding: 1rem;
+  width: 55vw;
+  padding: 1.15rem;
+  
   border: 1.5px solid #efedf0;
-  border-radius: 8px;
-  font-size: .9rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
 }
 
 button {
@@ -84,7 +85,7 @@ button {
 
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 4px 4px 6px rgba(150, 144, 144, 0.3);
+  box-shadow: 4px 4px 8px rgba(150, 144, 144, 0.3);
   background-color: #8a45aa;
   color: white;
 
@@ -94,7 +95,7 @@ button {
 }
 
 #new-tec > button {
-  width: 33vw;
+  width: 35vw;
 }
 
 .two-section {
@@ -109,14 +110,13 @@ button {
   margin: 0 auto;
 
   background-color: #eaecf3;
-  border-radius: 5px 18px 18px 18px;
+  border-radius: 1rem;
 }
 
 h2 {
   width: 85vw;
   margin: 0 auto;
   padding: 1.25rem;
-  text-align: center;
   color: #502153;
 }
 
@@ -129,23 +129,22 @@ h2 {
 
 .card {
   width: 75vw;
-  height: 6vh;
+  height: 3.3rem;
   margin: 1rem auto;
   list-style: none;
 
   display: flex;
-  place-items: center;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: white;
-  box-shadow: 4px 4px 6px rgba(126, 124, 124, 0.4);
+  box-shadow: 4px 4px 8px rgba(126, 124, 124, 0.4);
 }
 
 .card > p {
   font-size: 1.1rem;
-  text-align: center;
 }
 
 #img-del {
@@ -177,34 +176,20 @@ h2 {
 }
 
 
-/* ===== Animations ===== */
+/* Animations */
 
 #new-tec > input:focus {
   border-color: purple;
   outline: none;
 }
 
-button:hover {
-  opacity: 0.7;
-  top: -0.5rem;
-  border-radius: 10%;
-  box-shadow: 4px 6px 15px rgba(26, 25, 25, 0.835);
-}
-
-button:focus {
-  outline: none;
-}
-
-li:hover {
-  cursor: pointer;
-}
-
 
 /* ===== Media Queries ===== */
 
-@media only screen and (min-width: 700px) {   /* == Tablets == */
+@media only screen and (min-width: 700px) {   /* Tablets */
+
   .one-section > img {
-    height: 60vw;
+    height: 60vh;
     width: 60vw;
   }
 
@@ -213,7 +198,7 @@ li:hover {
   }
 
   #new-tec > input {
-    max-width: 22.5rem;
+    max-width: 23.5rem;
   }
 
   #new-tec > button {
@@ -241,14 +226,15 @@ li:hover {
   }
 }
 
-@media only screen and (min-width: 900px) {   /* == Desktops == */
+@media only screen and (min-width: 900px) {   /* Desktops */
+
   header {
-    width: 100%;
-    margin: -3rem auto;
+    width: 95%;
+    margin: -2.7rem auto 0;
   }
 
   #content {
-    margin: -3rem auto 0;
+    margin: -9rem auto 0;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -262,33 +248,26 @@ li:hover {
   
   .one-section > img {
     margin: 0 auto;
-    height: 60vh;
-    width: 60vw;
     transition: all ease 1s;
-  }
-
-  .one-section > img:hover {
-    max-height: 29rem;
-    max-width: 29rem;
-    margin-top: -1rem;
   }
   
   #new-tec {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
   
     display: grid;
     place-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
   }
   
   #new-tec > input {
+    width: 40vw;
     max-width: 28rem;
   }
 
   #new-tec > button {
+    width: 30vw;
     max-width: 20rem;
-    margin-top: .5rem;
   }
 
   .two-section {
@@ -299,9 +278,8 @@ li:hover {
   .content-tech {
     width: 100%;
     max-width: 44rem;
-
     height: auto;
-    margin: 4rem auto 2rem;
+    margin: 3.2rem auto 1rem;
   }
   
   h2 {
@@ -311,8 +289,7 @@ li:hover {
   #list {
     width: 90%;
     margin: 0 auto;
-
-    height: 22rem;
+    height: 20rem;
     max-height: 30rem;
     overflow: auto;
   }
@@ -323,15 +300,50 @@ li:hover {
   
   .buttons {
     width: 25rem;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
   }
 
+  /* Animations */
+
+  .one-section > img:hover {
+    max-height: 29rem;
+    max-width: 29rem;
+    margin-top: -1.5rem;
+  }
+
+  button:hover {
+    opacity: 0.55;
+    top: -0.5rem;
+    border-radius: 0;
+    box-shadow: 4px 6px 15px rgba(26, 25, 25, 0.835);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
+
+  #img-del:hover {
+    opacity: 0.55;
+    cursor: pointer;
+  }
 }
 
-@media only screen and (min-width: 1100px) {   /* == Desktops == */
+@media only screen and (min-width: 1100px) {
+
   .one-section > img:hover {
     max-height: 31rem;
     max-width: 31rem;
     margin-top: -1rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  
+  #content {
+    gap: 0;
   }
 }

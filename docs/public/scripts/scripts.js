@@ -54,7 +54,7 @@ function newTech() {
         techs.push(input.value.toLowerCase())
         error.innerHTML = ''
 
-        if (techs.length > 5) {
+        if (techs.length >= 5) {
             list.style.height = 'auto'
             content.style.margin = '2rem auto 2rem'
         }
@@ -94,8 +94,8 @@ function removeAll() {
         techs = []
         list.classList.remove('check')
 
-        list.style.height = '22rem'
-        content.style.margin = '4rem auto 2rem'
+        list.style.height = '20rem'
+        content.style.margin = '3.2rem auto 1rem'
     }
 }
 
