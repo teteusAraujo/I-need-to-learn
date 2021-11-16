@@ -8,7 +8,7 @@ let techs = []
 
 // ======= Functions =======
 
-// Button new tech ==
+// Button new tech
 input.addEventListener('keyup', (event) => {
     if (event.keyCode == 13) {
         newTech()
@@ -33,7 +33,7 @@ function newTech() {
 
         let spanElement = document.createElement('span')
         spanElement.addEventListener('click', () => {    // Delete item
-            list.removeChild(liElement);
+            list.removeChild(liElement)
             let idx = techs.indexOf(input.value.toLowerCase())
                 if (idx != undefined) {
                     techs.splice(idx, 1)
@@ -52,7 +52,7 @@ function newTech() {
         spanElement.appendChild(imgElement)
 
         techs.push(input.value.toLowerCase())
-        error.innerHTML = ""
+        error.innerHTML = ''
 
         if (techs.length > 5) {
             list.style.height = 'auto'
@@ -60,7 +60,7 @@ function newTech() {
         }
 
     } else {
-        error.innerHTML = "Por favor, digite uma nova tecnologia."  
+        error.innerHTML = 'Por favor, digite uma nova tecnologia.' 
     } 
     input.value = ''
     input.focus()
@@ -78,19 +78,25 @@ function notInTechs() {
 // Button check all
 function checkAll() {
     if (techs.length == 0) {
-        error.innerHTML = "Por favor, digite uma nova tecnologia."
+        error.innerHTML = 'Por favor, digite uma nova tecnologia.'
     } else {
-        list.classList.toggle('check')
+        for (let li of list.children)
+            li.classList.toggle('check')
     }
-    
 }
 
 // Button remove all
 function removeAll() {
-    list.innerHTML = ''
-    techs = []
-    list.style.height = '22rem'
-    content.style.margin = '4rem auto 2rem'
+    if (techs.length == 0) {
+        error.innerHTML = 'Por favor, digite uma nova tecnologia.'
+    } else {
+        list.innerHTML = ''
+        techs = []
+        list.classList.remove('check')
+
+        list.style.height = '22rem'
+        content.style.margin = '4rem auto 2rem'
+    }
 }
 
 
