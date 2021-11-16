@@ -20,7 +20,6 @@ function newTech() {
         let liElement = document.createElement('li')
         liElement.setAttribute("class", "card")
         liElement.setAttribute("draggable", "true")
-
         liElement.addEventListener('click', () => {    // Check item
             liElement.classList.toggle('check')
         })
