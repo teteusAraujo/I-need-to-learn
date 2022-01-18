@@ -61,7 +61,7 @@ git clone https://github.com/teteusAraujo/I-need-to-learn
 
 # Entrar numa IDE de sua preferência 
 
-# Executar o servidor ou usar um puglin que criar um servidor
+# Executar o servidor ou usar um plugin que criar um servidor
 
 ```
 
